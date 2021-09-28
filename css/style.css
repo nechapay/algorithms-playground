@@ -1,0 +1,63 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.content-container {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.fill {
+  width: 100%; height: 100%;
+}
+
+.array-container {
+  background: antiquewhite;
+  max-width: 100%;
+}
+
+.array-description-container {
+  height: 37px;
+  margin-left: 10px;
+  font-size: 80%;
+}
+
+.array-item-container {
+  min-width: 27px; height: 37px;
+  flex-direction: column;
+  margin: 1px;
+  padding: 2px;
+}
+
+.array-item {
+  margin: 1px;
+  padding: 2px;
+}
+
+.array-item__index {
+  font-size: 70%;
+  height: 10px;
+  min-width: 10px;
+}
+
+.array-item__value {
+  border: 1px solid #7ac586;
+  background: #7ede68;
+  font-size: 100%;
+  height: 20px;
+  min-width: 20px;
+}
+
+.fl-c-fs {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.fl-c-c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
