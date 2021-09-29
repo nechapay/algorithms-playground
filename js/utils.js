@@ -14,6 +14,7 @@ const getArrOfRand = (val) => {
   }
   return arr
 }
+
 // returns random int
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;

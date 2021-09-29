@@ -16,11 +16,11 @@ function heapify(arr, n, i) {
   let left = (2 * i) + 1
   let right = (2 * i) + 2
 
-  if(left < n && arr[left] > arr[max]) {
+  if (left < n && arr[left] > arr[max]) {
     max = left
   }
 
-  if(right < n && arr[right] > arr[max]) {
+  if (right < n && arr[right] > arr[max]) {
     max = right
   }
 

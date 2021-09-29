@@ -8,12 +8,8 @@ function start() {
   printArray(selectionSort(arr), `- selection sort`)
 
   arr = getArrOfRand(6)
-  printArray(arr,`- input arr`)
-  printArray(selectionSort(arr),`- selection sort`)
-
-  arr = getArrOfRand(6)
-  printArray(arr,`- input arr`)
-  printArray(bubbleSort(arr),`- bubble sort`)
+  printArray(arr, `- input arr`)
+  printArray(bubbleSort(arr), `- bubble sort`)
 
   arr = getArrOfRand(6)
   printArray(arr, `- input arr`)
@@ -30,6 +26,10 @@ function start() {
   arr = getArrOfRand(6)
   printArray(arr, `- input arr`)
   printArray(countSort(arr), `- count sort`)
+
+  arr = getArrOfRand(6)
+  printArray(arr, `- input arr`)
+  printArray(radixSort(arr), `- radix sort`)
 
   myConsole(`largest even ${findEven('284918227595347128185772596567355423933679973674289434574127522843135379266')}`)
 }
