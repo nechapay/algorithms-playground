@@ -1,21 +1,11 @@
 const radixSort = (arr) => {
-  let max = getMax(arr)
+  let max = Math.max.apply(Math, arr)
 
   for (let exp = 1; Math.floor(max / exp) > 0; exp *= 10) {
     radixHelper(arr, exp)
   }
 
   return arr
-}
-
-const getMax = (arr) => {
-  let max = arr[0]
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-      max = arr[i]
-    }
-  }
-  return max
 }
 
 const radixHelper = (arr, exp) => {
