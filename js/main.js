@@ -32,8 +32,14 @@ function start() {
   printArray(radixSort(arr), `- radix sort`)
 
   myConsole(`largest even ${findEven('284918227595347128185772596567355423933679973674289434574127522843135379266')}`)
+  f()
 }
 
-
-
-
+const f = () => {
+  for (var i = 0; i < 3; i++) {
+    const log = () => {
+      myConsole(`${i}`) // 3 3 3
+    }
+    setTimeout(log, 100)
+  }
+}
