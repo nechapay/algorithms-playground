@@ -49,7 +49,7 @@ function start() {
   printArray(shellSort(arr), `- shell sort`, '#shellSort')
 
   myConsole(`largest even ${findEven('284918227595347128185772596567355423933679973674289434574127522843135379266')}`)
-  f()
+  // f()
 }
 // closure trick let 1 2 3 var 3 3 3
 const f = () => {
