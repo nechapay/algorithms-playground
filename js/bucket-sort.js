@@ -1,4 +1,5 @@
-const bucketSort = (arr) => {
+const bucketSort = (initialArray) => {
+  let arr = [...initialArray]
   let n = arr.length
 
   if (n <= 0) {

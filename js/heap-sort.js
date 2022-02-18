@@ -1,4 +1,5 @@
-const heapSort = (arr) => {
+const heapSort = (initialArray) => {
+  let arr = [...initialArray]
   let n = arr.length
   buildHeap(arr, n)
   for (let i = n - 1; i >= 0; i--) {
@@ -13,8 +14,8 @@ const heapSort = (arr) => {
 
 function heapify(arr, n, i) {
   let max = i
-  let left = (2 * i) + 1
-  let right = (2 * i) + 2
+  let left = 2 * i + 1
+  let right = 2 * i + 2
 
   if (left < n && arr[left] > arr[max]) {
     max = left

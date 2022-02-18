@@ -1,10 +1,11 @@
-const countSort = (arr) => {
+const countSort = (initialArray) => {
+  let arr = [...initialArray]
   let max = Math.max.apply(Math, arr)
   let min = Math.min.apply(Math, arr)
 
   let range = max - min + 1
-  let count = Array.from({length: range}, (_) => 0)
-  let output = Array.from({length: arr.length}, (_) => 0)
+  let count = Array.from({ length: range }, (_) => 0)
+  let output = Array.from({ length: arr.length }, (_) => 0)
 
   for (let i = 0; i < arr.length; i++) {
     count[arr[i] - min]++

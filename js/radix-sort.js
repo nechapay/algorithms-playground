@@ -1,4 +1,5 @@
-const radixSort = (arr) => {
+const radixSort = (initialArray) => {
+  let arr = [...initialArray]
   let max = Math.max.apply(Math, arr)
 
   for (let exp = 1; Math.floor(max / exp) > 0; exp *= 10) {
@@ -10,8 +11,8 @@ const radixSort = (arr) => {
 
 const radixHelper = (arr, exp) => {
   let n = arr.length
-  let out = Array.from({length: n}, (_) => 0)
-  let count = Array.from({length: 10}, (_) => 0)
+  let out = Array.from({ length: n }, (_) => 0)
+  let count = Array.from({ length: 10 }, (_) => 0)
 
   for (let i = 0; i < n; i++) {
     count[Math.floor(arr[i] / exp) % 10]++
