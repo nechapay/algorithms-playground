@@ -4,36 +4,49 @@ window.addEventListener('load', function () {
 
 function start() {
   let arr = getArrOfRand(6)
-  printArray(arr, '- input arr')
-  printArray(selectionSort(arr), `- selection sort`)
+  createDiv('selectionSort')
+  printArray(arr, '- input arr', '#selectionSort')
+  printArray(selectionSort(arr), `- selection sort`, '#selectionSort')
 
   arr = getArrOfRand(6)
-  printArray(arr, `- input arr`)
-  printArray(bubbleSort(arr), `- bubble sort`)
+  createDiv('bubbleSort')
+  printArray(arr, `- input arr`, '#bubbleSort')
+  printArray(bubbleSort(arr), `- bubble sort`, '#bubbleSort')
 
   arr = getArrOfRand(6)
-  printArray(arr, `- input arr`)
-  printArray(quickSort(arr, 0, arr.length - 1), `- quick sort`)
+  createDiv('quickSort')
+  printArray(arr, `- input arr`, '#quickSort')
+  printArray(quickSort(arr, 0, arr.length - 1), `- quick sort`, '#quickSort')
 
   arr = getArrOfRand(6)
-  printArray(arr, `- input arr`)
-  printArray(merge(arr), `- merge sort`)
+  createDiv('mergeSort')
+  printArray(arr, `- input arr`, '#mergeSort')
+  printArray(merge(arr), `- merge sort`, '#mergeSort')
 
   arr = getArrOfRand(6)
-  printArray(arr, `- input arr`)
-  printArray(heapSort(arr), `- heap sort`)
+  createDiv('heapSort')
+  printArray(arr, `- input arr`, '#heapSort')
+  printArray(heapSort(arr), `- heap sort`, '#heapSort')
 
   arr = getArrOfRand(6)
-  printArray(arr, `- input arr`)
-  printArray(countSort(arr), `- count sort`)
+  createDiv('countSort')
+  printArray(arr, `- input arr`, '#countSort')
+  printArray(countSort(arr), `- count sort`, '#countSort')
 
   arr = getArrOfRand(6)
-  printArray(arr, `- input arr`)
-  printArray(radixSort(arr), `- radix sort`)
+  createDiv('radixSort')
+  printArray(arr, `- input arr`, '#radixSort')
+  printArray(radixSort(arr), `- radix sort`, '#radixSort')
 
   arr = [0.897, 0.565, 0.656, 0.1234, 0.665, 0.3434]
-  printArray(arr, `- input arr`)
-  printArray(bucketSort(arr), `- bucket sort`)
+  createDiv('bucketSort')
+  printArray(arr, `- input arr`, '#bucketSort')
+  printArray(bucketSort(arr), `- bucket sort`, '#bucketSort')
+
+  arr = getArrOfRand(6)
+  createDiv('shellSort')
+  printArray(arr, `- input arr`, '#shellSort')
+  printArray(shellSort(arr), `- shell sort`, '#shellSort')
 
   myConsole(`largest even ${findEven('284918227595347128185772596567355423933679973674289434574127522843135379266')}`)
   f()

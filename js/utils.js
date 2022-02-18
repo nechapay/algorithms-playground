@@ -17,7 +17,7 @@ const getArrOfRand = (val) => {
 
 // returns random int
 function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
+  return Math.floor(Math.random() * (max - min)) + min
 }
 
 function printArray(arr, description, target) {
@@ -52,4 +52,12 @@ function printArray(arr, description, target) {
   arrayDesc.classList.add('fl-c-c')
   arrayDesc.innerHTML = `<p>${description}</p>`
   arrayContainer.appendChild(arrayDesc)
+}
+
+function createDiv(id, target) {
+  target = target || '#console'
+  let element = document.createElement('div')
+  element.classList.add('algorithm-container')
+  element.setAttribute('id', id)
+  document.querySelector(target).appendChild(element)
 }
