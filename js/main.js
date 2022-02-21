@@ -36,6 +36,12 @@ function start() {
   printArray(merge(arr), `- merge sort`, '#mergeSort')
 
   arr = getArrOfRand(6)
+  createDiv('mergeSortIterative')
+  printArray(arr, `- input arr`, '#mergeSortIterative')
+  mergeSortIterative(arr)
+  printArray(arr, `- iterative merge sort`, '#mergeSortIterative')
+
+  arr = getArrOfRand(6)
   createDiv('quickSort')
   printArray(arr, `- input arr`, '#quickSort')
   printArray(quickSort(arr, 0, arr.length - 1), `- quick sort`, '#quickSort')
@@ -71,7 +77,7 @@ function start() {
   const timSort = new TimSort()
   printArray(timSort.timSort(arr), `- tim sort`, '#timSort')
 
-  myConsole(`largest even ${findEven('284918227595347128185772596567355423933679973674289434574127522843135379266')}`)
+  // myConsole(`largest even ${findEven('284918227595347128185772596567355423933679973674289434574127522843135379266')}`)
   // f()
 }
 // closure trick let 1 2 3 var 3 3 3
