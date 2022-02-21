@@ -65,7 +65,7 @@ class TimSort {
     }
   }
 
-  timSort = (initialArray) => {
+  sort = (initialArray) => {
     let arr = [...initialArray]
     const n = arr.length
     let minRun = this.minRunLength(this.MIN_MERGE)
