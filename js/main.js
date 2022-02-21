@@ -25,6 +25,12 @@ function start() {
   printArray(insertionSort(arr), `- insertion sort`, '#insertionSort')
 
   arr = getArrOfRand(6)
+  createDiv('insertionSortRecursive')
+  printArray(arr, `- input arr`, '#insertionSortRecursive')
+  insertionSortRecursive(arr, arr.length)
+  printArray(arr, `- recursive insertion sort`, '#insertionSortRecursive')
+
+  arr = getArrOfRand(6)
   createDiv('mergeSort')
   printArray(arr, `- input arr`, '#mergeSort')
   printArray(merge(arr), `- merge sort`, '#mergeSort')
@@ -59,7 +65,7 @@ function start() {
   printArray(arr, `- input arr`, '#shellSort')
   printArray(shellSort(arr), `- shell sort`, '#shellSort')
 
-  arr = getArrOfRand(64)
+  arr = getArrOfRand(10)
   createDiv('timSort')
   printArray(arr, `- input arr`, '#timSort')
   const timSort = new TimSort()
