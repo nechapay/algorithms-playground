@@ -3,8 +3,8 @@ const getArr = (val) => {
   return Array.from({ length: val }, (i, k) => k)
 }
 // generates array of random int
-const getArrOfRand = (val) => {
-  return Array.from({ length: val }, (i) => (i = getRandomInt(0, 100)))
+const getArrOfRand = (val, min = 0, max = 100) => {
+  return Array.from({ length: val }, (i) => (i = getRandomInt(min, max)))
 }
 
 // returns random int
@@ -12,7 +12,7 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min
 }
 
-function printArray(arr, description, target) {
+function printArray(arr, target, description) {
   target = target || '#console'
   description = description || ''
   let arrayContainer = document.createElement('div')
@@ -56,10 +56,28 @@ function printArray(arr, description, target) {
   arrayContainer.appendChild(arrayDesc)
 }
 
-function createDiv(id, target) {
+function createDiv(id, description, target) {
   target = target || '#console'
+  description = description || ''
   let element = document.createElement('div')
   element.classList.add('algorithm-container')
+  element.classList.add('d-flex')
+  element.classList.add('flex-column')
   element.setAttribute('id', id)
   document.querySelector(target).appendChild(element)
+  if (description !== '') {
+    let header = document.createElement('div')
+    header.classList.add('algorithm-container__header')
+    header.classList.add('d-flex')
+    header.classList.add('align-items-center')
+    header.classList.add('justify-content-center')
+    header.innerHTML = `<p>${description}</p>`
+    document.querySelector(`#${id}`).appendChild(header)
+  }
+}
+
+function appendTime(id, time) {
+  document.querySelector(`${id} .algorithm-container__header`).textContent = `${
+    document.querySelector(`${id} .algorithm-container__header`).textContent
+  } - ${time} ms`
 }
