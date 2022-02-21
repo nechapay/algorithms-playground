@@ -20,6 +20,7 @@
 .array-container {
   background: antiquewhite;
   max-width: 100%;
+  flex-wrap: wrap;
 }
 
 .array-description-container {
