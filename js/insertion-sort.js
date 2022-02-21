@@ -15,7 +15,7 @@ const insertionSort = (initialArray) => {
 
 const insertionSortRecursive = (arr, n) => {
   if (n <= 1) return
-  console.log(n, arr)
+  
   insertionSortRecursive(arr, n - 1)
 
   let last = arr[n - 1]
