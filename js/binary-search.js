@@ -23,7 +23,7 @@ const bin = (initialArray, val) => {
   return `404`
 }
 
-// нерабочий хохлокод
+// не рабочий хохлокод
 // const bin = (arr, val) => {
 //   let step = 1
 //   let mid = Math.floor(arr.length / 2)
