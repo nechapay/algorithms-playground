@@ -3,7 +3,6 @@ const quickSort = (initialArray, low, high) => {
   let arr = [...initialArray]
   if (low < high) {
     let pi = partition(arr, low, high)
-    // myConsole(`${arr}`)
     quickSort(arr, low, pi - 1)
     quickSort(arr, pi + 1, high)
   }
