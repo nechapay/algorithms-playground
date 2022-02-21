@@ -34,6 +34,5 @@ const q = (arr) => {
 
   const left = arr.filter((val) => val < arr[mid])
   const right = arr.filter((val) => val > arr[mid])
-  myConsole(`left ${left} right ${right} mid is ${arr[mid]}`)
   return [...q(left), arr[mid], ...q(right)]
 }
