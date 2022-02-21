@@ -9,7 +9,6 @@ class TimSort {
       r |= n & 1
       n >>= 1
     }
-    console.log(`n = ${n} r = ${r}`)
     return n + r
   }
 
