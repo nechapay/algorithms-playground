@@ -14,14 +14,19 @@ function start() {
   printArray(bubbleSort(arr), `- bubble sort`, '#bubbleSort')
 
   arr = getArrOfRand(6)
-  createDiv('quickSort')
-  printArray(arr, `- input arr`, '#quickSort')
-  printArray(quickSort(arr, 0, arr.length - 1), `- quick sort`, '#quickSort')
+  createDiv('insertionSort')
+  printArray(arr, `- input arr`, '#insertionSort')
+  printArray(insertionSort(arr), `- insertion sort`, '#insertionSort')
 
   arr = getArrOfRand(6)
   createDiv('mergeSort')
   printArray(arr, `- input arr`, '#mergeSort')
   printArray(merge(arr), `- merge sort`, '#mergeSort')
+
+  arr = getArrOfRand(6)
+  createDiv('quickSort')
+  printArray(arr, `- input arr`, '#quickSort')
+  printArray(quickSort(arr, 0, arr.length - 1), `- quick sort`, '#quickSort')
 
   arr = getArrOfRand(6)
   createDiv('heapSort')
@@ -47,6 +52,12 @@ function start() {
   createDiv('shellSort')
   printArray(arr, `- input arr`, '#shellSort')
   printArray(shellSort(arr), `- shell sort`, '#shellSort')
+
+  arr = getArrOfRand(64)
+  createDiv('timSort')
+  printArray(arr, `- input arr`, '#timSort')
+  const timSort = new TimSort()
+  printArray(timSort.timSort(arr), `- tim sort`, '#timSort')
 
   myConsole(`largest even ${findEven('284918227595347128185772596567355423933679973674289434574127522843135379266')}`)
   // f()
