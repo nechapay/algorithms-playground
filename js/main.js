@@ -14,6 +14,12 @@ function start() {
   printArray(bubbleSort(arr), `- bubble sort`, '#bubbleSort')
 
   arr = getArrOfRand(6)
+  createDiv('bubbleSortRecursive')
+  printArray(arr, `- input arr`, '#bubbleSortRecursive')
+  bubbleSortRecursive(arr, arr.length)
+  printArray(arr, `- recursive bubble sort`, '#bubbleSortRecursive')
+
+  arr = getArrOfRand(6)
   createDiv('insertionSort')
   printArray(arr, `- input arr`, '#insertionSort')
   printArray(insertionSort(arr), `- insertion sort`, '#insertionSort')
