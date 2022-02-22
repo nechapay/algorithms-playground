@@ -81,12 +81,18 @@ function start() {
   printArray(arr, '#timSort')
   // appendTime('#timSort', end - start)
 
-  arr = getArrOfRand(10)
+  arr = getArrOfRand(6)
   createDiv('combSort', 'comb sort')
   printArray(arr, '#combSort')
   const combSort = new CombSort()
   arr = combSort.sort(arr)
   printArray(arr, '#combSort')
+
+  arr = getArrOfRand(6)
+  createDiv('pigeonholeSort', 'pigeonhole sort')
+  printArray(arr, '#pigeonholeSort')
+  arr = pigeonholeSort(arr)
+  printArray(arr, '#pigeonholeSort')
 
   // myConsole(`largest even ${findEven('284918227595347128185772596567355423933679973674289434574127522843135379266')}`)
   // f()
