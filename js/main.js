@@ -94,6 +94,12 @@ function start() {
   arr = pigeonholeSort(arr)
   printArray(arr, '#pigeonholeSort')
 
+  arr = getArrOfRand(6)
+  createDiv('cycleSort', 'cycle sort')
+  printArray(arr, '#cycleSort')
+  arr = cycleSort(arr)
+  printArray(arr, '#cycleSort')
+
   // myConsole(`largest even ${findEven('284918227595347128185772596567355423933679973674289434574127522843135379266')}`)
   // f()
 }
