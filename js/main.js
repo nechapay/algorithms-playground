@@ -106,6 +106,15 @@ function start() {
   arr = cocktailSort(arr)
   printArray(arr, '#cocktailSort')
 
+  arr = getArrOfRand(6)
+  createDiv('strandSort', 'strand sort')
+  printArray(arr, '#strandSort')
+  let sorted = []
+  const strandSort = new StrandSort(arr, sorted)
+  strandSort.sort()
+  sorted = strandSort.sorted
+  printArray(sorted, '#strandSort')
+
   // myConsole(`largest even ${findEven('284918227595347128185772596567355423933679973674289434574127522843135379266')}`)
   // f()
 }
