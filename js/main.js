@@ -115,6 +115,13 @@ function start() {
   sorted = strandSort.sorted
   printArray(sorted, '#strandSort')
 
+  arr = getArrOfRand(8)
+  createDiv('bitonicSort', 'bitonic sort')
+  printArray(arr, '#bitonicSort')
+  const bitonicSort = new BitonicSort()
+  bitonicSort.sort(arr, 1)
+  printArray(arr, '#bitonicSort')
+
   // myConsole(`largest even ${findEven('284918227595347128185772596567355423933679973674289434574127522843135379266')}`)
   // f()
 }
