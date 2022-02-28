@@ -30,8 +30,8 @@
 }
 
 .array-item-container {
-  min-width: 27px;
-  height: 37px;
+  min-width: 41px;
+  height: 56px;
   flex-direction: column;
   margin: 1px;
   padding: 2px;
@@ -44,16 +44,17 @@
 
 .array-item__index {
   font-size: 70%;
-  height: 10px;
-  min-width: 10px;
+  height: 15px;
+  min-width: 15px;
 }
 
 .array-item__value {
   border: 1px solid #7ac586;
+  border-radius: 3px;
   background: #7ede68;
   font-size: 100%;
-  height: 20px;
-  min-width: 20px;
+  height: 30px;
+  min-width: 30px;
 }
 
 .d-flex {
