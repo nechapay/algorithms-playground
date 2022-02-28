@@ -100,6 +100,12 @@ function start() {
   arr = cycleSort(arr)
   printArray(arr, '#cycleSort')
 
+  arr = getArrOfRand(6)
+  createDiv('cocktailSort', 'cocktail sort')
+  printArray(arr, '#cocktailSort')
+  arr = cocktailSort(arr)
+  printArray(arr, '#cocktailSort')
+
   // myConsole(`largest even ${findEven('284918227595347128185772596567355423933679973674289434574127522843135379266')}`)
   // f()
 }
