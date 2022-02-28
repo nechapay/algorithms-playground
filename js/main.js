@@ -110,8 +110,8 @@ function start() {
   createDiv('strandSort', 'strand sort')
   printArray(arr, '#strandSort')
   let sorted = []
-  const strandSort = new StrandSort(arr, sorted)
-  strandSort.sort()
+  const strandSort = new StrandSort(sorted)
+  strandSort.sort(arr)
   sorted = strandSort.sorted
   printArray(sorted, '#strandSort')
 

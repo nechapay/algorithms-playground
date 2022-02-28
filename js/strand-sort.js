@@ -1,25 +1,24 @@
 class StrandSort {
-  constructor(input, output) {
-    this.input = input
+  constructor(output) {
     this.output = output
   }
 
-  sort() {
-    if (this.input.length === 0) return
+  sort(input, output) {
+    if (input.length === 0) return
     let subArr = []
-    subArr.push(this.input.shift())
+    subArr.push(input.shift())
     let i = 0
 
-    while (i < this.input.length) {
-      if (this.input[i] > subArr[subArr.length - 1]) {
-        subArr.push(this.input[i])
-        this.input.splice(i, 1)
+    while (i < input.length) {
+      if (input[i] > subArr[subArr.length - 1]) {
+        subArr.push(input[i])
+        input.splice(i, 1)
       } else i++
     }
 
     this.output = this.merge(this.output, subArr)
 
-    this.sort(this.input, this.output)
+    this.sort(input, this.output)
   }
 
   merge(left, right) {
