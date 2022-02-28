@@ -7,8 +7,7 @@ class StrandSort {
   sort() {
     if (this.input.length === 0) return
     let subArr = []
-    subArr.push(this.input[0])
-    this.input.splice(0, 1)
+    subArr.push(this.input.shift())
     let i = 0
 
     while (i < this.input.length) {
