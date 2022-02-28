@@ -109,11 +109,9 @@ function start() {
   arr = getArrOfRand(6)
   createDiv('strandSort', 'strand sort')
   printArray(arr, '#strandSort')
-  let sorted = []
-  const strandSort = new StrandSort(sorted)
+  const strandSort = new StrandSort([])
   strandSort.sort(arr)
-  sorted = strandSort.sorted
-  printArray(sorted, '#strandSort')
+  printArray(strandSort.sorted, '#strandSort')
 
   arr = getArrOfRand(8)
   createDiv('bitonicSort', 'bitonic sort')
