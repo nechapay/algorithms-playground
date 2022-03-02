@@ -120,6 +120,14 @@ function start() {
   bitonicSort.sort(arr, 1)
   printArray(arr, '#bitonicSort')
 
+
+  arr = getArrOfRand(5)
+  createDiv('pancakeSort', 'pancake sort')
+  printArray(arr, '#pancakeSort')
+  const pancakeSort = new PancakeSort()
+  pancakeSort.sort(arr)
+  printArray(arr, '#pancakeSort')
+
   // myConsole(`largest even ${findEven('284918227595347128185772596567355423933679973674289434574127522843135379266')}`)
   // f()
 }
