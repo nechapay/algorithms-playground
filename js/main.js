@@ -147,6 +147,13 @@ function start() {
   arr = gnomeSort(arr)
   printArray(arr, '#gnomeSort')
 
+  arr = getArrOfRand(6)
+  createDiv('sleepSort', 'sleep sort')
+  printArray(arr, '#sleepSort')
+  sleepSort(arr, (a) => {
+    printArray(a, '#sleepSort')
+  })
+
   // myConsole(`largest even ${findEven('284918227595347128185772596567355423933679973674289434574127522843135379266')}`)
   // f()
 }
