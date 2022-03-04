@@ -1,7 +1,6 @@
 // binary search
 const bin = (initialArray, val) => {
   let arr = [...initialArray]
-  let step = 1
   let left = 0
   let right = arr.length - 1
   if (val > arr[right]) {
@@ -9,7 +8,6 @@ const bin = (initialArray, val) => {
   }
   while (left <= right) {
     let mid = Math.floor((right + left) / 2)
-    myConsole(`${step}: mid is ${mid} at ${arr[mid]}`)
     if (arr[mid] === val) {
       return `${val} in position ${mid} of array: [${arr}]`
     }
