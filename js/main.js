@@ -120,13 +120,19 @@ function start() {
   bitonicSort.sort(arr, 1)
   printArray(arr, '#bitonicSort')
 
-
   arr = getArrOfRand(5)
   createDiv('pancakeSort', 'pancake sort')
   printArray(arr, '#pancakeSort')
   const pancakeSort = new PancakeSort()
   pancakeSort.sort(arr)
   printArray(arr, '#pancakeSort')
+
+  arr = getArrOfRand(6)
+  createDiv('binaryInsertionSort', 'binary insertion sort')
+  printArray(arr, '#binaryInsertionSort')
+  const binaryInsertionSort = new BinaryInsertionSort()
+  binaryInsertionSort.sort(arr)
+  printArray(arr, '#binaryInsertionSort')
 
   // myConsole(`largest even ${findEven('284918227595347128185772596567355423933679973674289434574127522843135379266')}`)
   // f()
