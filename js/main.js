@@ -134,6 +134,13 @@ function start() {
   binaryInsertionSort.sort(arr)
   printArray(arr, '#binaryInsertionSort')
 
+  arr = getArrOfRand(6)
+  createDiv('permutationSort', 'permutation sort')
+  printArray(arr, '#permutationSort')
+  const permutationSort = new PermutationSort()
+  permutationSort.sort(arr)
+  printArray(arr, '#permutationSort')
+
   // myConsole(`largest even ${findEven('284918227595347128185772596567355423933679973674289434574127522843135379266')}`)
   // f()
 }
