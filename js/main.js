@@ -154,6 +154,12 @@ function start() {
     printArray(a, '#sleepSort')
   })
 
+  arr = getArrOfRand(6)
+  createDiv('stoogeSort', 'stooge sort')
+  printArray(arr, '#stoogeSort')
+  stoogeSort(arr, 0, arr.length - 1)
+  printArray(arr, '#stoogeSort')
+
   // myConsole(`largest even ${findEven('284918227595347128185772596567355423933679973674289434574127522843135379266')}`)
   // f()
 }
