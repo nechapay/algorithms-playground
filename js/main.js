@@ -166,6 +166,11 @@ function start() {
   arr = tagSort(arr)
   printArray(arr, '#tagSort')
 
+  arr = getArrOfRand(6)
+  createDiv('treeSort', 'tree sort')
+  printArray(arr, '#treeSort')
+  printArray(treeSort(arr), '#treeSort')
+
   // myConsole(`largest even ${findEven('284918227595347128185772596567355423933679973674289434574127522843135379266')}`)
   // f()
 }
