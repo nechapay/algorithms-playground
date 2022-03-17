@@ -160,6 +160,12 @@ function start() {
   stoogeSort(arr, 0, arr.length - 1)
   printArray(arr, '#stoogeSort')
 
+  arr = [0.897, 0.565, 0.656, 0.1234, 0.665, 0.3434]
+  createDiv('tagSort', 'tag sort')
+  printArray(arr, '#tagSort')
+  arr = tagSort(arr)
+  printArray(arr, '#tagSort')
+
   // myConsole(`largest even ${findEven('284918227595347128185772596567355423933679973674289434574127522843135379266')}`)
   // f()
 }
