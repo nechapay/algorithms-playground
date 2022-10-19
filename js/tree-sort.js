@@ -1,11 +1,3 @@
-class Node {
-  constructor(data) {
-    this.data = data
-    this.left = null
-    this.right = null
-  }
-}
-
 class BinarySearchTree {
   constructor() {
     // root of a binary search tree

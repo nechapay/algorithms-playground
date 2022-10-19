@@ -171,6 +171,11 @@ function start() {
   printArray(arr, '#treeSort')
   printArray(treeSort(arr), '#treeSort')
 
+  arr = getArrOfRand(6)
+  createDiv('cartesianTreeSort', 'cartesianTree sort')
+  printArray(arr, '#cartesianTreeSort')
+  printArray(cartesianTreeSort(arr), '#cartesianTreeSort')
+
   // myConsole(`largest even ${findEven('284918227595347128185772596567355423933679973674289434574127522843135379266')}`)
   // f()
 }

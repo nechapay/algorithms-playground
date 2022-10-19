@@ -1,3 +1,10 @@
+class Node {
+  constructor(data) {
+    this.data = data
+    this.left = null
+    this.right = null
+  }
+}
 // generates array from 1 to val
 const getArr = (val) => {
   return Array.from({ length: val }, (i, k) => k)
