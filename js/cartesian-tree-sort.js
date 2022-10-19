@@ -22,9 +22,8 @@ class CartesianTree {
       last = i - 1
       rightChild[i] = -1
 
-      while (arr[last] <= arr[i] && last !== root) {
+      while (arr[last] >= arr[i] && last !== root) {
         last = parent[last]
-        console.log('last while', last)
       }
 
       if (arr[last] >= arr[i]) {
@@ -43,6 +42,7 @@ class CartesianTree {
       }
     }
     parent[root] = -1
+    console.log(root, arr, parent, leftChild, rightChild)
     return this.buildTreeUtil(root, arr, parent, leftChild, rightChild)
   }
 
