@@ -181,6 +181,11 @@ function start() {
   printArray(arr, '#oddEvenSort')
   printArray(oddEvenSort(arr), '#oddEvenSort')
 
+  arr = getArrOfRand(6)
+  createDiv('quickSortSLList', 'quickSortSLList')
+  printArray(arr, '#quickSortSLList')
+  printArray(quickSortSLList(arr), '#quickSortSLList')
+
   // myConsole(`largest even ${findEven('284918227595347128185772596567355423933679973674289434574127522843135379266')}`)
   // f()
 }
