@@ -66,8 +66,6 @@ class PriorityQueue {
   }
 
   printPQueue() {
-    var str = ''
-    for (var i = 0; i < this.items.length; i++) str += this.items[i].element + ' '
-    return this.items.map((i) => i.element).join(' ')
+    return this.items.map((i) => i.element)
   }
 }

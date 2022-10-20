@@ -87,5 +87,5 @@ const cartesianTreeSort = (arr) => {
   let root = cartesianTree.build(arr)
   let pQueue = new PriorityQueue()
   cartesianTree.pQTraversal(root, pQueue)
-  return pQueue.printPQueue().split(' ')
+  return pQueue.printPQueue()
 }
