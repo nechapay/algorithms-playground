@@ -42,7 +42,6 @@ class CartesianTree {
       }
     }
     parent[root] = -1
-    console.log(root, arr, parent, leftChild, rightChild)
     return this.buildTreeUtil(root, arr, parent, leftChild, rightChild)
   }
 
