@@ -195,6 +195,7 @@ function start() {
   // ]
   // console.log(sumArr(arr, arr.length, 665))
   // arr = [1, 2, 3, 5]
+  // console.log(sumArr(arr, arr.length, 6))
   // console.log(missingNumber(arr, arr.length + 1))
 }
 // closure trick let 1 2 3 var 3 3 3
@@ -209,14 +210,11 @@ const f = () => {
 
 const sumArr = (arr, n, s) => {
   let sum
-  let res = []
   for (let i = 0; i < n; i++) {
     sum = arr[i]
     for (let j = i + 1; j <= n; j++) {
       if (sum === s) {
-        res.push(i + 1)
-        res.push(j)
-        return res
+        return [i + 1, j]
       }
 
       if (sum > s || j === n) break
@@ -228,8 +226,5 @@ const sumArr = (arr, n, s) => {
 }
 
 const missingNumber = (arr, n) => {
-  let sum = 0
-  sum = arr.reduce((i, j) => i + j)
-  let formula = parseInt((n * (n + 1)) / 2)
-  return formula - sum
+  return parseInt((n * (n + 1)) / 2) - arr.reduce((i, j) => i + j)
 }
