@@ -188,6 +188,14 @@ function start() {
 
   // myConsole(`largest even ${findEven('284918227595347128185772596567355423933679973674289434574127522843135379266')}`)
   // f()
+  // arr = [
+  //   142, 112, 54, 69, 148, 45, 63, 158, 38, 60, 124, 142, 130, 179, 117, 36, 191, 43, 89, 107, 41, 143, 65, 49, 47, 6,
+  //   91, 130, 171, 151, 7, 102, 194, 149, 30, 24, 85, 155, 157, 41, 167, 177, 132, 109, 145, 40, 27, 124, 138, 139, 119,
+  //   83, 130, 142, 34, 116, 40, 59, 105, 131, 178, 107, 74, 187, 22, 146, 125, 73, 71, 30, 178, 174, 98, 113
+  // ]
+  // console.log(sumArr(arr, arr.length, 665))
+  // arr = [1, 2, 3, 5]
+  // console.log(missingNumber(arr, arr.length + 1))
 }
 // closure trick let 1 2 3 var 3 3 3
 const f = () => {
@@ -197,4 +205,31 @@ const f = () => {
     }
     setTimeout(log, 100)
   }
+}
+
+const sumArr = (arr, n, s) => {
+  let sum
+  let res = []
+  for (let i = 0; i < n; i++) {
+    sum = arr[i]
+    for (let j = i + 1; j <= n; j++) {
+      if (sum === s) {
+        res.push(i + 1)
+        res.push(j)
+        return res
+      }
+
+      if (sum > s || j === n) break
+
+      sum += arr[j]
+    }
+  }
+  return [-1]
+}
+
+const missingNumber = (arr, n) => {
+  let sum = 0
+  sum = arr.reduce((i, j) => i + j)
+  let formula = parseInt((n * (n + 1)) / 2)
+  return formula - sum
 }
