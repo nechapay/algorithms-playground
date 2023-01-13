@@ -211,6 +211,11 @@ function start() {
   console.log('searchTwo', end - start)
   forTest()
   longestPalindrome('aaaabbbaa')
+  console.log(searchPoly('abaa'))
+  console.log(searchMax([-1, -2, -1, -2, -3, -1]))
+  console.log(shortWords(['aaa', 'bb', 'cc', 'd', 'e', 'f', 'gggg']))
+  console.log(leftFlood([3, 1, 3, 2, 4, 1, 1, 2, 1]))
+  console.log(rle('ABBBCCXYZDDDDEEEFFFAAAAAABBBBBF'))
 }
 // closure trick let 1 2 3 var 3 3 3
 const f = () => {
