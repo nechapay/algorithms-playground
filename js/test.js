@@ -97,3 +97,42 @@ function rlePack(str, cnt) {
   }
   return str
 }
+
+const aBSearch = (arr, x) => {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] + arr[j] === x) {
+        return [arr[i], arr[j]]
+      }
+    }
+  }
+  return [0, 0]
+}
+
+const abSetSearch = (arr, x) => {
+  let p = new Set()
+
+  for (let i = 0; i < arr.length; i++) {
+    if (p.has(x - arr[i])) {
+      return [arr[i], x - arr[i]]
+    }
+    p.add(arr[i])
+  }
+  return [0, 0]
+}
+
+const worldsInDict = (dict, text) => {
+  let ans = []
+  let goodWords = new Set(dict)
+
+  for (const word of dict) {
+    for (let i = 0; i < word.length; i++) {
+      goodWords.add(word.slice(0, i) + word.slice(i + 1, word.length))
+    }
+  }
+  for (const word of text.split(' ')) {
+    if (goodWords.has(word)) ans.push(word)
+  }
+
+  return ans
+}

@@ -216,6 +216,11 @@ function start() {
   console.log(shortWords(['aaa', 'bb', 'cc', 'd', 'e', 'f', 'gggg']))
   console.log(leftFlood([3, 1, 3, 2, 4, 1, 1, 2, 1]))
   console.log(rle('ABBBCCXYZDDDDEEEFFFAAAAAABBBBBF'))
+
+  console.log(aBSearch([3, 1, 3, 2, 4, 1, 1, 2, 1], 8))
+  console.log(abSetSearch([3, 1, 3, 2, 4, 1, 1, 2, 1], 7))
+
+  console.log(worldsInDict(['aaa', 'bbb', 'cc', 'ddd'], 'aaa bb c dddd'))
 }
 // closure trick let 1 2 3 var 3 3 3
 const f = () => {
