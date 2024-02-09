@@ -44,6 +44,7 @@ const searchMax = (arr) => {
 }
 
 const shortWords = (words) => {
+  if (!words.length) return ''
   let minLength = words[0].length
   for (const word of words) {
     if (word.length < minLength) minLength = word.length
@@ -135,4 +136,53 @@ const worldsInDict = (dict, text) => {
   }
 
   return ans
+}
+
+const stringToGist = (s) => {
+  let dict = {}
+  let max = 0
+  for (let i = 0; i < s.length; i++) {
+    if (!dict[s[i]]) {
+      dict[s[i]] = 0
+    }
+    dict[s[i]]++
+    if (dict[s[i]] > max) {
+      max = dict[s[i]]
+    }
+  }
+
+  let sortedKeys = Object.keys(dict).sort()
+  for (let i = max; i > 0; i--) {
+    let tmp = ''
+    for (const el of sortedKeys) {
+      tmp += dict[el] >= i ? '#' : ' '
+    }
+    console.log(tmp)
+  }
+  console.log(sortedKeys.join(''))
+}
+
+const mergeLists = (first, second) => {
+  let result = []
+  let iFirst = 0
+  let iSecond = 0
+  while (iFirst < first.length && iSecond < second.length) {
+    if (first[iFirst] < second[iSecond]) {
+      result.push(first[iFirst])
+      iFirst++
+    } else {
+      result.push(second[iSecond])
+      iSecond++
+    }
+  }
+  while (iFirst < first.length) {
+    result.push(first[iFirst])
+    iFirst++
+  }
+  while (iSecond < second.length) {
+    result.push(second[iSecond])
+    iSecond++
+  }
+
+  return result
 }
