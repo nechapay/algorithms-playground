@@ -241,7 +241,20 @@ function start() {
   // console.log(zizZagConvert('A', 1))
   // console.log(reverse(2147483647))
   // console.log(myAtoi('  - 413'))
-  console.log(isPalindrome2(121))
+  // console.log(isPalindrome2(121))
+  // console.log(romanToInt2('MCMXCIV'))
+  // console.log(isMatch('aa', 'a'))
+  // console.log(isMatch('aa', 'a*'))
+  // console.log(isMatch('ab', '.*'))
+  // console.log(isMatch('aab', 'c*a*b'), 'true')
+  // console.log(isMatch('ab', '.*c'))
+  // console.log(isMatch('aaa', 'a*a'))
+  // console.log(isMatch('abcd', 'd*'), 'false')
+  // console.log(isMatch('aaa', '.a'), 'false')
+  // console.log(isMatch('mississippi', 'mis*is*p*.'), 'false')
+  console.log(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]), '49')
+  console.log(maxArea([1, 1]), '1')
+  console.log(maxArea([2, 3, 10, 5, 7, 8, 9]), '36')
 }
 // closure trick let 1 2 3 var 3 3 3
 const f = () => {
@@ -362,183 +375,4 @@ function testTelegram() {
   const a = 7
 
   console.log(+-10)
-}
-
-function twoSum(nums, target) {
-  for (i = 0; i < nums.length - 1; i++) {
-    for (let ii = i + 1; ii < nums.length; ii++) {
-      if (nums[i] + nums[ii] === target) {
-        return [i, ii]
-      }
-    }
-  }
-  return []
-}
-
-function twoSum2(nums, target) {
-  const m = new Map()
-  for (i = 0; i < nums.length; i++) {
-    m.set(nums[i], i)
-  }
-  let diff = 0
-  for (i = 0; i < nums.length; i++) {
-    diff = target - nums[i]
-    if (m.has(diff) && i !== m.get(diff)) {
-      return [i, m.get(diff)]
-    }
-  }
-  return []
-}
-
-function twoSum3(nums, target) {
-  const m = new Map()
-  for (i = 0; i < nums.length; i++) {
-    let diff = target - nums[i]
-    if (m.has(diff)) return [m.get(diff), i]
-    m.set(nums[i], i)
-  }
-
-  return []
-}
-
-function longestSubstring(s) {
-  let arr = s.split('')
-  let maxLen = arr.length ? arr[0].length : 0
-  for (let i = 0; i < arr.length - 1; i++) {
-    let str = arr[i]
-    for (let ii = i + 1; ii < arr.length; ii++) {
-      if (str.indexOf(arr[ii]) === -1) {
-        str = str + arr[ii]
-      } else {
-        break
-      }
-    }
-    if (maxLen < str.length) maxLen = str.length
-  }
-  return maxLen
-}
-
-function longestSubstring2(s) {
-  const set = new Set()
-  let max = 0
-  let prev = 0
-  for (current = 0; current < s.length; current++) {
-    while (set.has(s[current])) {
-      set.delete(s[prev])
-      prev++
-    }
-    set.add(s[current])
-    max = Math.max(max, current - prev + 1)
-  }
-
-  return max
-}
-
-function zigZagConvert(s, numRows) {
-  let mtx = []
-  let idx = 0
-  let row = 0
-  let col = 0
-  if (numRows === 1 || !s) return s
-  for (let i = 0; i < numRows; i++) {
-    mtx.push([])
-  }
-  while (idx < s.length) {
-    while (row < numRows && s[idx]) {
-      mtx[row][col] = s[idx]
-      idx++
-      row++
-    }
-    row = row - 2
-    while (row > 0 && s[idx]) {
-      col++
-      mtx[row][col] = s[idx]
-      row--
-      idx++
-    }
-    row = 0
-    col++
-  }
-  let result = ''
-  for (let r = 0; r < numRows; r++) {
-    for (let c = 0; c < mtx[r].length; c++) {
-      result = mtx[r][c] ? result + mtx[r][c] : result
-    }
-  }
-  return result
-}
-
-function zigZag2(s, numRows) {
-  if (numRows === 1 || !s) return s
-  let result = ''
-  let n = s.length
-  let dx = 2 * numRows - 2
-  for (let i = 0; i < numRows; i++) {
-    for (let ii = 0; ii + i < n; ii += dx) {
-      result += s[i + ii]
-      if (i !== 0 && i !== numRows - 1 && ii + dx - i < n) {
-        result += s[ii + dx - i]
-      }
-    }
-  }
-  return result
-}
-
-const reverse = function (x) {
-  let result =
-    x >= 0 ? parseInt(('' + x).split('').reverse().join('')) : -1 * parseInt(('' + x).split('').reverse().join(''))
-  return result > 2147483647 || result < -2147483648 ? 0 : result
-}
-
-const myAtoi = (s) => {
-  let str = ''
-  let digits = '0123456789'
-  let sign = null
-  let signed = false
-  if (!s) return 0
-  for (let i = 0; i < s.length; i++) {
-    if (s[i] === ' ' && !str) {
-      if (signed) return 0
-      continue
-    }
-    if (s[i] === '-' && !str) {
-      if (signed) return 0
-      sign = false
-      signed = true
-      continue
-    }
-    if (s[i] === '+' && !str) {
-      if (signed) return 0
-      sign = true
-      signed = true
-      continue
-    }
-
-    if (digits.indexOf(s[i]) !== -1) {
-      str += s[i]
-    } else break
-    if (signed && !str) return 0
-  }
-  if (!str) return 0
-  let result = sign !== false ? parseInt(str) : -1 * parseInt(str)
-  result = result > 2147483647 ? 2147483647 : result
-  result = result < -2147483648 ? -2147483648 : result
-  return result
-}
-
-const isPalindrome = (x) => {
-  return x.toString() === x.toString().split('').reverse().join('')
-}
-
-const isPalindrome2 = (x) => {
-  if (x < 0) return false
-  if (x >= 0 && x < 10) return true
-  let t = x
-  let y = 0
-  while (t > 0) {
-    let digit = t % 10
-    y = y * 10 + digit
-    t = Math.floor(t / 10)
-  }
-  return x === y
 }
