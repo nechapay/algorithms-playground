@@ -406,3 +406,144 @@ function maxArea(height) {
   }
   return max
 }
+
+function intToRoman(num) {
+  let t = num
+  let roman = {
+    1: 'I',
+    4: 'IV',
+    5: 'V',
+    9: 'IX',
+    10: 'X',
+    40: 'XL',
+    50: 'L',
+    90: 'XC',
+    100: 'C',
+    400: 'CD',
+    500: 'D',
+    900: 'CM',
+    1000: 'M'
+  }
+  let result = ''
+  let n = num.toString().length - 1
+  for (let i = Math.pow(10, n); i > 0; i = Math.floor(i / 10)) {
+    let d = t - (t % i)
+    let j = Math.floor(t / i)
+    if (roman[d]) {
+      result += roman[d]
+    } else {
+      let m = j % 5
+      if (m !== 0) {
+        let o = (j - m) * i
+        if (o >= 5) result += roman[o]
+        for (let k = 0; k < (d - o) / i; k++) {
+          result += roman[i]
+        }
+      } else {
+        for (let k = 0; k < j; k++) {
+          result += roman[d / j]
+        }
+      }
+    }
+    t = t % i
+  }
+  console.log(romanToInt2(result), num)
+  return result
+}
+
+function longestCommonPrefix(strs) {
+  let n = strs.length
+  if (!n) return ''
+  let j = 0
+  let res = ''
+  let all = true
+  while (j < strs[0].length) {
+    let pref = strs[0].slice(0, j + 1)
+    for (let i = 1; i < n; i++) {
+      let p = strs[i].slice(0, j + 1)
+      if (p !== pref) {
+        all = false
+        break
+      }
+    }
+    j++
+    if (all) res = pref
+    else break
+  }
+  return res
+}
+
+function threeSum2Pointers(nums) {
+  let result = []
+  if (nums.length < 3) return result
+
+  nums.sort((a, b) => a - b)
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] > 0) break
+    if (i > 0 && nums[i] === nums[i - 1]) {
+      continue
+    }
+    let low = i + 1
+    let high = nums.length - 1
+    while (low < high) {
+      let sum = nums[i] + nums[low] + nums[high]
+      if (sum > 0) {
+        high--
+      } else if (sum < 0) {
+        low++
+      } else {
+        result.push([nums[i], nums[low], nums[high]])
+        let lastLow = nums[low]
+        let lastHigh = nums[high]
+        while (low < high && nums[low] === lastLow) low++
+        while (low < high && nums[high] === lastHigh) high--
+      }
+    }
+  }
+
+  return result
+}
+
+function threeSumHashMap(nums) {
+  let result = []
+  if (nums.length < 3) return result
+
+  nums.sort((a, b) => a - b)
+  const hashMap = new Map()
+  for (let i = 0; i < nums.length; i++) {
+    hashMap.set(nums[i], i)
+  }
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] > 0) break
+    for (let j = i + 1; j < nums.length - 1; j++) {
+      let req = -1 * (nums[i] + nums[j])
+      if (hashMap.has(req) && hashMap.get(req) > j) {
+        result.push([nums[i], nums[j], req])
+      }
+      j = hashMap.get(nums[j])
+    }
+    i = hashMap.get(nums[i])
+  }
+  return result
+}
+
+function threeSumClosest(nums, target) {
+  let min = Infinity
+  nums.sort((a, b) => a - b)
+  for (let i = 0; i < nums.length; i++) {
+    if (i > 0 && nums[i] === nums[i - 1]) continue
+    let l = i + 1
+    let h = nums.length - 1
+    while (l < h) {
+      let sum = nums[i] + nums[l] + nums[h]
+      if (Math.abs(sum - target) < Math.abs(min - target)) {
+        min = sum
+      }
+      if (sum === target) return sum
+      else if (sum < target) l++
+      else h--
+    }
+  }
+  return min
+}

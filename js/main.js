@@ -252,9 +252,15 @@ function start() {
   // console.log(isMatch('abcd', 'd*'), 'false')
   // console.log(isMatch('aaa', '.a'), 'false')
   // console.log(isMatch('mississippi', 'mis*is*p*.'), 'false')
-  console.log(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]), '49')
-  console.log(maxArea([1, 1]), '1')
-  console.log(maxArea([2, 3, 10, 5, 7, 8, 9]), '36')
+  // console.log(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]), '49')
+  // console.log(maxArea([1, 1]), '1')
+  // console.log(maxArea([2, 3, 10, 5, 7, 8, 9]), '36')
+  // console.log(intToRoman(7))
+  // console.log(longestCommonPrefix(['flower', 'flow', 'flight']), 'fl')
+  // console.log(threeSum2Pointers([-1, 0, 1, 2, -1, -4]), [])
+  // console.log(threeSumHashMap([-1, 0, 1, 2, -1, -4]), [])
+  console.log(threeSumClosest([4, 0, 5, -5, 3, 3, 0, -4, -5], -2), -2)
+  console.log(threeSumClosest([-1, 2, 1, -4], 1), 2)
 }
 // closure trick let 1 2 3 var 3 3 3
 const f = () => {
