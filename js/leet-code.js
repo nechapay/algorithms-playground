@@ -654,7 +654,7 @@ function isValid(s) {
 }
 
 function mergeTwoLists(list1, list2) {
-  let node =  new ListNode()
+  let node = new ListNode()
   let head = node
 
   while (list1 && list2) {
@@ -671,4 +671,29 @@ function mergeTwoLists(list1, list2) {
   node.next = list1 || list2
 
   return head.next
+}
+
+function generateParenthesis(n) {
+  function backtrack(out, str, l, r) {
+    if (l === 0 && r === 0) {
+      out.push(str)
+    }
+
+    if (l > 0) {
+      str += '('
+      backtrack(out, str, l - 1, r)
+      str = str.slice(0, -1)
+    }
+
+    if (r > 0 && r > l) {
+      str += ')'
+      backtrack(out, str, l, r - 1)
+      str = str.slice(0, -1)
+    }
+  }
+
+  const out = []
+  let str = ''
+  backtrack(out, str, n, n)
+  return out
 }

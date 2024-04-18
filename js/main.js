@@ -269,7 +269,8 @@ function start() {
   // ])
   // console.log(linkedListToArray(removeNthFromEnd(arrayToLinkedList([1, 2, 3, 4, 5]), 2)))
   // console.log(isValid('()'))
-  console.log(linkedListToArray(mergeTwoLists(arrayToLinkedList([1, 2, 4]), arrayToLinkedList([1, 3, 4]))))
+  // console.log(linkedListToArray(mergeTwoLists(arrayToLinkedList([1, 2, 4]), arrayToLinkedList([1, 3, 4]))))
+  console.log(generateParenthesis(3))
 }
 // closure trick let 1 2 3 var 3 3 3
 const f = () => {
