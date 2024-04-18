@@ -547,3 +547,90 @@ function threeSumClosest(nums, target) {
   }
   return min
 }
+
+function letterCombinations(digits) {
+  if (digits.length === 0) return []
+
+  const phoneMap = ['abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz']
+  let result = []
+  backtrack('', digits, phoneMap, result)
+  return result
+
+  function backtrack(combination, nextDigits, phoneMap, output) {
+    if (nextDigits.length === 0) {
+      output.push(combination)
+    } else {
+      const letters = phoneMap[nextDigits[0] - '2']
+      for (const letter of letters) {
+        backtrack(combination + letter, nextDigits.slice(1), phoneMap, output)
+      }
+    }
+  }
+}
+
+function fourSum(nums, target) {
+  function kSum(nums, target, k) {
+    let res = []
+
+    if (!nums) return res
+
+    const avg = Math.floor(target / k)
+
+    if (avg < nums[0] || nums[nums.length - 1] < avg) return res
+
+    if (k === 2) return twoSumLocal(nums, target)
+
+    for (let i = 0; i < nums.length; i++) {
+      if (i == 0 || nums[i - 1] !== nums[i]) {
+        for (const subset of kSum(nums.slice(i + 1), target - nums[i], k - 1)) {
+          res.push([nums[i], ...subset])
+        }
+      }
+    }
+
+    return res
+  }
+  function twoSumLocal(nums, target) {
+    const res = []
+    let low = 0
+    let n = nums.length - 1
+    let high = n
+
+    while (low < high) {
+      let sum = nums[low] + nums[high]
+      if (sum < target || (low > 0 && nums[low] === nums[low - 1])) low++
+      else if (sum > target || (high < n && nums[high] === nums[high + 1])) high--
+      else {
+        res.push([nums[low], nums[high]])
+        low++
+        high--
+      }
+    }
+    return res
+  }
+
+  if (nums.length < 4) return []
+
+  nums.sort((a, b) => a - b)
+  return kSum(nums, target, 4)
+}
+
+function removeNthFromEnd(head, n) {
+  let tail = head
+  let count = 0
+
+  while (tail) {
+    tail = tail.next
+    count++
+  }
+
+  if (count === n) return head.next
+
+  tail = head
+  for (let i = 0; i < count - n - 1; i++) {
+    tail = tail.next
+  }
+  tail.next ? (tail.next = tail.next.next) : null
+
+  return head
+}

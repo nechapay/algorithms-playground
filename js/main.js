@@ -259,8 +259,15 @@ function start() {
   // console.log(longestCommonPrefix(['flower', 'flow', 'flight']), 'fl')
   // console.log(threeSum2Pointers([-1, 0, 1, 2, -1, -4]), [])
   // console.log(threeSumHashMap([-1, 0, 1, 2, -1, -4]), [])
-  console.log(threeSumClosest([4, 0, 5, -5, 3, 3, 0, -4, -5], -2), -2)
-  console.log(threeSumClosest([-1, 2, 1, -4], 1), 2)
+  // console.log(threeSumClosest([4, 0, 5, -5, 3, 3, 0, -4, -5], -2), -2)
+  // console.log(threeSumClosest([-1, 2, 1, -4], 1), 2)
+  // console.log(letterCombinations('3522'))
+  // console.log(fourSum([1, 0, -1, 0, -2, 2], 0), [
+  //   [-2, -1, 1, 2],
+  //   [-2, 0, 0, 2],
+  //   [-1, 0, 0, 1]
+  // ])
+  console.log(linkedListToArray(removeNthFromEnd(arrayToLinkedList([1, 2, 3, 4, 5]), 2)))
 }
 // closure trick let 1 2 3 var 3 3 3
 const f = () => {

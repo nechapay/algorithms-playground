@@ -88,3 +88,30 @@ function appendTime(id, time) {
     document.querySelector(`${id} .algorithm-container__header`).textContent
   } - ${time} ms`
 }
+
+class ListNode {
+  constructor(val = 0, next = null) {
+    this.val = val
+    this.next = next
+  }
+}
+
+function arrayToLinkedList(arr) {
+  const head = new ListNode()
+  let tail = head
+  for (const item of arr) {
+    tail.next = new ListNode(item)
+    tail = tail.next
+  }
+  return head.next
+}
+
+function linkedListToArray(head) {
+  let tail = head
+  const arr = []
+  while (tail) {
+    arr.push(tail.val)
+    tail = tail.next
+  }
+  return arr
+}
