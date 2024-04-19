@@ -115,3 +115,49 @@ function linkedListToArray(head) {
   }
   return arr
 }
+
+// class QElement {
+//   constructor(element, priority) {
+//     this.element
+//     this.priority
+//   }
+// }
+
+class MinPriorityQueue {
+  constructor() {
+    this.items = []
+  }
+
+  enqueue(element, priority) {
+    let qElement = new QElement(element, priority)
+    let contain = false
+
+    console.log(qElement, this.items)
+    for (let i = 0; i < this.items.length; i++) {
+      if (this.items[i].priority > qElement.priority) {
+        this.items.splice(i, 0, qElement)
+
+        contain = true
+        break
+      }
+    }
+
+    if (!contain) {
+      this.items.push(qElement)
+    }
+  }
+
+  isEmpty() {
+    return this.items.length === 0
+  }
+
+  dequeue() {
+    if (this.items.length == 0) return 'Underflow'
+    return this.items.shift()
+  }
+
+  front() {
+    if (this.isEmpty) return 'No elements in Queue'
+    return this.items[0]
+  }
+}

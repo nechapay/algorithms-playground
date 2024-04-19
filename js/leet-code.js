@@ -697,3 +697,27 @@ function generateParenthesis(n) {
   backtrack(out, str, n, n)
   return out
 }
+
+function mergeKLists(lists) {
+  const queue = new MinPriorityQueue()
+
+  for (const head of lists) {
+    if (head) {
+      queue.enqueue(head, head.val)
+    }
+  }
+
+  let result = new ListNode()
+  const head = result
+
+  while (!queue.isEmpty()) {
+    const { val, next } = queue.dequeue().element
+
+    result.next = new ListNode(val)
+    result = result.next
+
+    if (next) queue.enqueue(next, next.val)
+  }
+
+  return head.next
+}
