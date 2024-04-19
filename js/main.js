@@ -271,11 +271,12 @@ function start() {
   // console.log(isValid('()'))
   // console.log(linkedListToArray(mergeTwoLists(arrayToLinkedList([1, 2, 4]), arrayToLinkedList([1, 3, 4]))))
   // console.log(generateParenthesis(3))
-  const l1 = arrayToLinkedList([1, 4, 5])
-  const l2 = arrayToLinkedList([1, 3, 4])
-  const l3 = arrayToLinkedList([2, 6])
-  const lists = [l1, l2, l3]
-  console.log(linkedListToArray(mergeKLists(lists)))
+  // const l1 = arrayToLinkedList([1, 4, 5])
+  // const l2 = arrayToLinkedList([1, 3, 4])
+  // const l3 = arrayToLinkedList([2, 6])
+  // const lists = [l1, l2, l3]
+  // console.log(linkedListToArray(mergeKLists(lists)))
+  console.log(linkedListToArray(swapPairs(arrayToLinkedList([1, 2, 3, 4]))))
 }
 // closure trick let 1 2 3 var 3 3 3
 const f = () => {

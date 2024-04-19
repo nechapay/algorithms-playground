@@ -721,3 +721,31 @@ function mergeKLists(lists) {
 
   return head.next
 }
+
+function swapPairs(head) {
+  let current = head
+  let prev = null,
+    res
+
+  while (current) {
+    if (!current.next) {
+      break
+    }
+
+    let temp = current.next.next
+    let node1 = current
+    let node2 = current.next
+
+    node1.next = temp
+    node2.next = node1
+
+    if (prev) prev.next = node2
+    else res = node2
+
+    prev = node1
+    current = temp
+  }
+  if (res) res.next = head
+  else res = head
+  return res
+}
