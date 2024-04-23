@@ -749,3 +749,39 @@ function swapPairs(head) {
   else res = head
   return res
 }
+
+function reverseKGroup(head, k) {
+  let dummy = new ListNode()
+  dummy.next = head
+  let prevEnd = dummy
+  let currEnd = head
+  let prev = null
+  let curr = head
+  let count = 1
+
+  while (curr) {
+    let next = curr.next
+    curr.next = prev
+    prev = curr
+    curr = next
+
+    if (count % k === 0) {
+      prevEnd.next = prev
+      prevEnd = currEnd
+      currEnd = curr
+      prev = null
+    }
+    count++
+  }
+  curr = prev
+  prev = null
+  while (curr) {
+    let next = curr.next
+    curr.next = prev
+    prev = curr
+    curr = next
+  }
+  prevEnd.next = prev
+
+  return dummy.next
+}

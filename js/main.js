@@ -276,7 +276,8 @@ function start() {
   // const l3 = arrayToLinkedList([2, 6])
   // const lists = [l1, l2, l3]
   // console.log(linkedListToArray(mergeKLists(lists)))
-  console.log(linkedListToArray(swapPairs(arrayToLinkedList([1, 2, 3, 4]))))
+  // console.log(linkedListToArray(swapPairs(arrayToLinkedList([1, 2, 3, 4]))))
+  console.log(linkedListToArray(reverseKGroup(arrayToLinkedList([1, 2, 3, 4, 5]), 2)))
 }
 // closure trick let 1 2 3 var 3 3 3
 const f = () => {
