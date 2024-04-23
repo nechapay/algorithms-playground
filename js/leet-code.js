@@ -785,3 +785,16 @@ function reverseKGroup(head, k) {
 
   return dummy.next
 }
+
+function removeDuplicates(nums) {
+  let k = 0
+  let last = null
+
+  for (const n of nums) {
+    if (last === n) continue
+    last = n
+    nums[k] = n
+    k++
+  }
+  return k
+}
