@@ -798,3 +798,26 @@ function removeDuplicates(nums) {
   }
   return k
 }
+
+function removeElement(nums, val) {
+  // while (nums.indexOf(val) !== -1) {
+  //   nums.splice(nums.indexOf(val), 1)
+  // }
+  // return nums.length
+  let k = 0
+  let l = 0
+  let r = nums.length - 1
+
+  while (l <= r) {
+    if (nums[l] === val) {
+      let temp = nums[r]
+      nums[r] = nums[l]
+      nums[l] = temp
+      r--
+    } else {
+      l++
+      k++
+    }
+  }
+  return k
+}
