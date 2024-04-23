@@ -280,8 +280,9 @@ function start() {
   // console.log(linkedListToArray(reverseKGroup(arrayToLinkedList([1, 2, 3, 4, 5]), 2)))
   // let nums = [1, 1, 2, 2, 3, 3, 4]
   // console.log(nums.slice(0, removeDuplicates(nums)))
-  let nums = [0, 1, 2, 2, 3, 0, 4, 2]
-  console.log(removeElement(nums, 2))
+  // let nums = [0, 1, 2, 2, 3, 0, 4, 2]
+  // console.log(removeElement(nums, 2))
+  console.log(strStr('sadbutsad', 'but'))
 }
 // closure trick let 1 2 3 var 3 3 3
 const f = () => {

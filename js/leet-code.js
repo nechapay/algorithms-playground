@@ -821,3 +821,47 @@ function removeElement(nums, val) {
   }
   return k
 }
+
+function strStr(haystack, needle) {
+  const hl = haystack.length
+  const nl = needle.length
+
+  const lps = Array.from({ length: nl }, () => 0)
+
+  let prev = 0
+  lps[0] = 0
+  let i = 1
+  while (i < nl) {
+    if (needle[i] === needle[prev]) {
+      prev++
+      lps[i] = prev
+      i++
+    } else {
+      if (prev !== 0) {
+        prev = lps[prev - 1]
+      } else {
+        lps[i] = 0
+        i++
+      }
+    }
+  }
+
+  i = 0
+  np = 0
+
+  while (hl - i >= nl - np) {
+    if (haystack[i] === needle[np]) {
+      i++
+      np++
+    }
+
+    if (np === nl) return i - np
+    else if (i < hl && haystack[i] !== needle[np]) {
+      if (np !== 0) {
+        np = lps[np - 1]
+      } else i++
+    }
+  }
+
+  return -1
+}
