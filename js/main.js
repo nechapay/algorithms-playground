@@ -284,9 +284,12 @@ function start() {
   // console.log(removeElement(nums, 2))
   // console.log(strStr('sadbutsad', 'but'))
   // console.log(divide(-2147483648, -1))
-  console.log(
-    findSubstring('lingmindraboofooowingdingbarrwingmonkeypoundcake', ['fooo', 'barr', 'wing', 'ding', 'wing'])
-  )
+  // console.log(
+  //   findSubstring('lingmindraboofooowingdingbarrwingmonkeypoundcake', ['fooo', 'barr', 'wing', 'ding', 'wing'])
+  // )
+  const nums = [1, 2, 3]
+  nextPermutation(nums)
+  console.log(nums)
 }
 // closure trick let 1 2 3 var 3 3 3
 const f = () => {
