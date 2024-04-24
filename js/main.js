@@ -282,7 +282,8 @@ function start() {
   // console.log(nums.slice(0, removeDuplicates(nums)))
   // let nums = [0, 1, 2, 2, 3, 0, 4, 2]
   // console.log(removeElement(nums, 2))
-  console.log(strStr('sadbutsad', 'but'))
+  // console.log(strStr('sadbutsad', 'but'))
+  console.log(divide(-2147483648, -1))
 }
 // closure trick let 1 2 3 var 3 3 3
 const f = () => {

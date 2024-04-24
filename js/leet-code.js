@@ -865,3 +865,30 @@ function strStr(haystack, needle) {
 
   return -1
 }
+
+function divide(dividend, divisor) {
+  if (dividend === divisor) return 1
+
+  let a = dividend > 0 ? dividend : -dividend
+  let b = divisor > 0 ? divisor : -divisor
+  let quotient = 0
+  const isPositive = divisor < 0 === dividend < 0
+
+  while (a >= b) {
+    let count = 1
+    let decrement = b
+
+    while (a >= decrement) {
+      a -= decrement
+      quotient += count
+      count += count
+      decrement += decrement
+    }
+  }
+  quotient = isPositive ? quotient : -quotient
+
+  quotient = quotient > 2147483647 ? 2147483647 : quotient
+  quotient = quotient < -2147483648 ? -2147483648 : quotient
+
+  return quotient
+}
