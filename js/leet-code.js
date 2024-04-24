@@ -892,3 +892,46 @@ function divide(dividend, divisor) {
 
   return quotient
 }
+
+function findSubstring(s, words) {
+  if (!s || !words) return []
+
+  wordLength = words[0].length
+  result = []
+  wordsCount = {}
+
+  for (const word of words) {
+    if (wordsCount[word]) wordsCount[word]++
+    else wordsCount[word] = 1
+  }
+
+  for (let i = 0; i < wordLength; i++) {
+    let left = i
+    let count = 0
+    let hash = {}
+
+    for (let j = i; j < s.length - wordLength + 1; j += wordLength) {
+      let word = s.slice(j, j + wordLength)
+
+      if (wordsCount[word]) {
+        hash[word] = hash[word] ? hash[word] + 1 : 1
+        count++
+
+        while (hash[word] > wordsCount[word]) {
+          leftWord = s.slice(left, left + wordLength)
+          hash[leftWord]--
+          left += wordLength
+          count--
+        }
+
+        if (count === words.length) result.push(left)
+      } else {
+        hash = {}
+        count = 0
+        left = j + wordLength
+      }
+    }
+  }
+
+  return result
+}
