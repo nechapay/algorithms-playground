@@ -958,3 +958,25 @@ function nextPermutation(nums) {
     end--
   }
 }
+
+function longestValidParentheses(s) {
+  let max = 0
+  let count = 0
+  const stk = []
+  const dp = Array.from({ length: s.length }, () => 0)
+  
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] == '(') stk.push(i)
+    else if (stk.length !== 0) {
+      dp[i] = 1
+      dp[stk.pop()] = 1
+    }    
+  }
+
+  for (const item of dp) {
+    count = item === 1 ? count + 1 : 0
+    max = max < count ? count : max     
+  }
+
+  return max
+}

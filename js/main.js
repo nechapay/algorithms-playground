@@ -287,9 +287,10 @@ function start() {
   // console.log(
   //   findSubstring('lingmindraboofooowingdingbarrwingmonkeypoundcake', ['fooo', 'barr', 'wing', 'ding', 'wing'])
   // )
-  const nums = [1, 2, 3]
-  nextPermutation(nums)
-  console.log(nums)
+  // const nums = [1, 2, 3]
+  // nextPermutation(nums)
+  // console.log(nums)
+  console.log(longestValidParentheses('()()'))
 }
 // closure trick let 1 2 3 var 3 3 3
 const f = () => {
