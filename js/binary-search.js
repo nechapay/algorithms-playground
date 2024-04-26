@@ -16,7 +16,6 @@ const bin = (initialArray, val) => {
     } else {
       right = mid - 1
     }
-    step++
   }
   return `404`
 }

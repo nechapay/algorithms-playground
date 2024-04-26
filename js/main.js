@@ -290,7 +290,8 @@ function start() {
   // const nums = [1, 2, 3]
   // nextPermutation(nums)
   // console.log(nums)
-  console.log(longestValidParentheses('()()'))
+  // console.log(longestValidParentheses('()()'))
+  console.log(search([4, 5, 6, 7, 0, 1, 2], 0))
 }
 // closure trick let 1 2 3 var 3 3 3
 const f = () => {
