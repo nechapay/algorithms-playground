@@ -1001,3 +1001,59 @@ function search(nums, target) {
 
   return -1
 }
+
+function searchRange(nums, target) {
+  let lb = nums.length
+  let left = 0
+  let right = nums.length - 1
+
+  while (left <= right) {
+    mid = Math.floor((left + right) / 2)
+
+    if (nums[mid] >= target) {
+      lb = mid
+      right = mid - 1
+    } else {
+      left = mid + 1
+    }
+  }
+
+  if (lb >= nums.length || lb !== target) return [-1, -1]
+
+  let rb = nums.length
+  left = lb + 1
+  right = nums.length - 1
+
+  while (left <= right) {
+    mid = Math.floor((left + right) / 2)
+
+    if (nums[mid] > target) {
+      rb = mid
+      right = mid - 1
+    } else {
+      left = mid + 1
+    }
+  }
+
+  return [lb, rb - 1]
+}
+
+function searchInsert(nums, target) {
+  let left = 0
+  let right = nums.length - 1
+
+  while (left <= right) {
+    let mid = Math.floor((left + right) / 2)
+
+    if (nums[mid] === target) {
+      return mid
+    }
+
+    if (nums[mid] > target) {
+      right = mid - 1
+    } else {
+      left = mid + 1
+    }
+  }
+  return left
+}
